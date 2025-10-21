@@ -24,11 +24,11 @@ CREATE TABLE researchers(
 INSERT INTO projects (project_id, project_title, department) VALUES
 (1,'Brain Scan', 'Neuroscience'),
 (2,'Cryptography','CS'),
-(3,'AI Project', 'AI LAB'),
-(4, 'BIO signal', 'Biomedical');
+(3,'AI Project', 'AI Lab'),
+(4, 'Bio signal', 'Biomedical');
 
 INSERT INTO researchers (researcher_id, name, position, project_id) VALUES
-(1,'ALice', 'PhD', 1),
+(1,'ALice', 'Phd', 1),
 (2,'Ben','Postdoc',2),
 (3,'Cara','Assistant',2),
 (4,'David','Phd',2),
