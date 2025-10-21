@@ -1,5 +1,3 @@
-Terminal close -- exit!
-hw_prog_1;
 CREATE DATABASE hw_prog_1;
 USE hw_prog_1;
 
@@ -44,21 +42,18 @@ ORDER BY venue_name ASC;
 
 
 -- Task 2.2: Average citations per author, ordered by author in ascending order.
-
 SELECT author, AVG(citations) AS avg_citations
 FROM Publication
 GROUP BY author
 ORDER BY author ASC;
 
 -- Task 2.3: Total citations for all conference publications
-
 SELECT SUM(p.citations) AS conference_citations
 FROM Publication p
 JOIN Venue v ON p.venue_id = v.venue_id
 WHERE v.type = 'Conference';
 
 -- Task 2.4 Average citations per venue type (Journal vs Conference), ordered by venue type in ascending order.
-
 SELECT v.type, AVG(p.citations) AS avg_citations
 FROM Publication p
 JOIN Venue v ON p.venue_id = v.venue_id
@@ -66,7 +61,6 @@ GROUP BY v.type
 ORDER BY v.type ASC;
 
 -- Task 2.5 Authors with total citations above 150, ordered by author in ascending order.
-
 SELECT author, SUM(citations) AS total_citations
 FROM Publication
 GROUP BY author
