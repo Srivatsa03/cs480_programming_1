@@ -28,12 +28,12 @@ INSERT INTO projects (project_id, project_title, department) VALUES
 (4, 'Bio Signal', 'Biomedical');
 
 INSERT INTO researchers (researcher_id, name, position, project_id) VALUES
-(1,'Alice', 'PhD', 1),
-(2,'Ben','Postdoc',2),
-(3,'Cara','Assistant',2),
-(4,'David','PhD',2),
+(1, 'Alice', 'PhD', 1),
+(2, 'Ben', 'Postdoc', 1),
+(3, 'Cara', 'Assistant', 2),
+(4, 'David', 'PhD', 3),
 (5, 'Eva', 'Postdoc', 3),
-(6, 'Frank', 'Assistant',4);
+(6, 'Frank', 'Assistant', 4);
 
 
 
@@ -49,7 +49,7 @@ WHERE project_title = 'Bio Signal';
 
 UPDATE researchers
 SET position = 'Senior Assistant'
-WHere name ='Cara';
+WHERE name = 'Cara';
 
 -- -- Display all tables after Task 1.3
 SELECT * FROM projects ORDER BY project_id ASC;
@@ -58,10 +58,10 @@ SELECT * FROM researchers ORDER BY researcher_id ASC;
 
 -- -- Task 1.4: Delete operations
 DELETE FROM researchers
-WHERE researcher_id=1;
+WHERE researcher_id = 1;
 
 DELETE FROM projects
-WHERE project_id =2;
+WHERE project_id = 2;
 
 
 
@@ -87,5 +87,5 @@ ORDER BY researcher_id ASC;
 -- Task 1.7: Show the name of each researcher along with their project title, ordered by researcher_name in ascending order.
 SELECT r.name AS researcher_name, p.project_title
 FROM researchers r
-LEFT JOIN projects p on r.project_id = p.project_id
+LEFT JOIN projects p ON r.project_id = p.project_id
 ORDER BY researcher_name ASC;
