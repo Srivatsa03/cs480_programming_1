@@ -21,11 +21,33 @@ INSERT INTO Employee VALUES
 
 
 -- Task 3.1: Find all subordinates of Bob, ordered by emp_id in ascending order.
-
+WITH RECURSIVE subordinates AS (
+    SELECT emp_id, name, manager_id, position
+    FROM employee
+    WHERE manager_id =(SELECT emp_id FROM employee WHERE name = 'Bob')
+    UNION ALL
+    SELECT e.emp_id,e.name, e.manager_id,e.position
+    FROM employee e
+    INNER JOIN subordinates s ON e.manager_id =s.emp_id
+)
+SELECT emp_id, name,manager_id,position
+FROM subordinates
+ORDER BY emp_id ASC;
 
 
 -- Task 3.2: Find the chain of managers above Grace, ordered by emp_id in ascending order
-
+WITH RECURSIVE managers AS (
+    SELECT emp_id, name, manager_id, position
+    FROM employee
+    WHERE emp_id = (SELECT manager_id FROM employee WHERE name = 'Grace')
+    UNION ALL
+    SELECT e.emp_id, e.name, e.manager_id, e.position
+    FROM employee e
+    INNER JOIN managers m ON e.emp_id = m.manager_id
+)
+SELECT emp_id, name, manager_id, position
+FROM managers
+ORDER BY emp_id ASC;
 
 
 -- Task 3.3: Assign levels to all employees relative to CEO, ordered by level in ascending order.
