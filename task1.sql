@@ -11,7 +11,7 @@ CREATE TABLE projects (
 
 CREATE TABLE researchers(
     researcher_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VAARCHAR(100),
+    name VARCHAR(100),
     position VARCHAR(100),
     project_id INT,
     CONSTRAINT fk_project
