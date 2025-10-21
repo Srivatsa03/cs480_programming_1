@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS hw_prog_1;
 CREATE DATABASE hw_prog_1;
 USE hw_prog_1;
 
