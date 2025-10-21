@@ -4,13 +4,13 @@ USE hw_prog_1;
 
 -- Task 1.1: Create tables
 CREATE TABLE projects (
-    project_id INT PRIMARY KEY,
+    project_id INT AUTO_INCREMENT PRIMARY KEY,
     project_title VARCHAR(100),
     department VARCHAR(100)
 );
 
-CREATE TABLE researchers(
-    researcher_id INT PRIMARY KEY,
+CREATE TABLE researchers (
+    researcher_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100),
     position VARCHAR(100),
     project_id INT,
