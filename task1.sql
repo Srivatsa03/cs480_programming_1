@@ -25,13 +25,13 @@ INSERT INTO projects (project_id, project_title, department) VALUES
 (1,'Brain Scan', 'Neuroscience'),
 (2,'Cryptography','CS'),
 (3,'AI Project', 'AI Lab'),
-(4, 'Bio signal', 'Biomedical');
+(4, 'Bio Signal', 'Biomedical');
 
 INSERT INTO researchers (researcher_id, name, position, project_id) VALUES
-(1,'ALice', 'Phd', 1),
+(1,'Alice', 'PhD', 1),
 (2,'Ben','Postdoc',2),
 (3,'Cara','Assistant',2),
-(4,'David','Phd',2),
+(4,'David','PhD',2),
 (5, 'Eva', 'Postdoc', 3),
 (6, 'Frank', 'Assistant',4);
 
