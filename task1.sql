@@ -10,7 +10,7 @@ CREATE TABLE projects (
 );
 
 CREATE TABLE researchers(
-    researcher_id INT AUTO_INCREMENT PRIMARY KEY,
+    researcher_id INT PRIMARY KEY,
     name VARCHAR(100),
     position VARCHAR(100),
     project_id INT,
