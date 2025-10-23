@@ -36,7 +36,30 @@ ORDER BY emp_id ASC;
 
 
 -- Task 3.2: Find the chain of managers above Grace, ordered by emp_id in ascending order
-
+WITH RECURSIVE managers AS (
+    SELECT emp_id, name, manager_id, position
+    FROM employee
+    WHERE emp_id = (SELECT manager_id FROM employee WHERE name = 'Grace')
+    UNION ALL
+    SELECT e.emp_id, e.name, e.manager_id, e.position
+    FROM employee e
+    INNER JOIN managers m ON e.emp_id = m.manager_id
+)
+SELECT emp_id, name, manager_id, position
+FROM managers
+ORDER BY emp_id ASC;
 
 
 -- Task 3.3: Assign levels to all employees relative to CEO, ordered by level in ascending order.
+WITH RECURSIVE hierarchy AS (
+    SELECT emp_id, name, manager_id, position, 0 AS level
+    FROM employee
+    WHERE position = 'CEO'
+    UNION ALL
+    SELECT e.emp_id, e.name, e.manager_id, e.position, h.level + 1
+    FROM employee e
+    INNER JOIN hierarchy h ON e.manager_id = h.emp_id
+)
+SELECT emp_id, name, manager_id, position, level
+FROM hierarchy
+ORDER BY level ASC;
