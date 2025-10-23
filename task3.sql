@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS hw_prog_1;
 CREATE DATABASE hw_prog_1;
 USE hw_prog_1;
 
-CREATE TABLE Employee (
+CREATE TABLE employee (
     emp_id INT PRIMARY KEY,
     name VARCHAR(100),
     manager_id INT,
@@ -10,7 +10,7 @@ CREATE TABLE Employee (
 );
 
 
-INSERT INTO Employee VALUES
+INSERT INTO employee VALUES
 (1, 'Alice', NULL, 'CEO'),        
 (2, 'Bob', 1, 'CTO'),            
 (3, 'Carol', 1, 'CFO'),           
