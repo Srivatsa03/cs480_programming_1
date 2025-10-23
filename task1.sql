@@ -85,8 +85,8 @@ WHERE position = 'Postdoc'
 ORDER BY researcher_id ASC;
 
 -- Task 1.7: Show the name of each researcher along with their project title, ordered by researcher_name in ascending order.
-SELECT researchers.name AS researcher_name, projects.project_title
-FROM researchers
-LEFT JOIN projects
-ON researchers.project_id = projects.project_id
+SELECT r.name AS researcher_name, p.project_title
+FROM researchers r
+JOIN projects p
+ON r.project_id = p.project_id
 ORDER BY researcher_name ASC;
